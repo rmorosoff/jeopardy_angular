@@ -32,18 +32,5 @@ export class AppComponent implements OnInit {
   }
   
 
-  checkAnswer(givenAnswer) {
-    console.log(this.userAnswer);
-    console.log(this.questionInfo.answer);
-    if (this.userAnswer == this.questionInfo.answer) {
-      this.totalScore = this.totalScore + this.questionInfo.value
-    } else{
-      console.log("You blew it!!")
-    }
-
-    this.getDataFromService();
-
-    this.userAnswer = '';
-
-  }
+  
 }

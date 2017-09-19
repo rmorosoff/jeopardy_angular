@@ -9,9 +9,10 @@
   <h3>Your curent score:  </h3> {{totalScore}}
 </div>
 <br>
+<hr>
 <br>
 
-<div id="questionBox">
+<div id="questionBox" style="text-align:center">
   <p><b>Category:</b>  {{questionInfo?.category.title}}</p>
   <p><b>Points:</b>  {{questionInfo?.value}}</p>
   <br>
@@ -19,9 +20,6 @@
   <p>{{questionInfo?.question}}</p>
 </div>
 <br>
+<hr>
 <br>
-<div id="answerBox">
-  <p>Answer the question here:</p> 
-  <input type="text" [(ngModel)]="userAnswer">
-  <button id="answerButton" (click)="checkAnswer()">Submit Answer</button>
-</div>
+<app-answer (thingSelected)="catchThingSelected($event)" [totalScore]="totalScore" [questionInfo]="questionInfo" [userAnswer]="userAnswer" [getDataFromService]="getDataFromService"></app-answer>
