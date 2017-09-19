@@ -6,7 +6,7 @@
   <h1>
     Welcome to {{title}}!
   </h1>
-  <h3>Your curent score:  </h3> {{totalScore}}
+  <h3>Your curent score:  </h3> {{answerAttributes?.totalScore}}
 </div>
 <br>
 <hr>
@@ -22,4 +22,4 @@
 <br>
 <hr>
 <br>
-<app-answer (thingSelected)="catchThingSelected($event)" [totalScore]="totalScore" [questionInfo]="questionInfo" [userAnswer]="userAnswer" [getDataFromService]="getDataFromService"></app-answer>
+<app-answer #answerAttributes (newQuestion)="getDataFromService()" [questionInfo]="questionInfo"></app-answer>

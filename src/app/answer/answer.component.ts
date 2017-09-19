@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { JeopardyService } from '../jeopardy.service';
 
 @Component({
@@ -8,19 +8,17 @@ import { JeopardyService } from '../jeopardy.service';
 })
 export class AnswerComponent implements OnInit {
 
-  constructor(private jeopardyService : JeopardyService) { }
+  @Output() newQuestion = new EventEmitter<boolean>();
+
+  constructor() { }
 
   ngOnInit() {
   }
 
-  @Input() totalScore;
+  userAnswer;
+  totalScore: number = 0;
   @Input() questionInfo;
-  @Input() userAnswer;
-
-  @Input() getDataFromService;
-
-
-
+  
   checkAnswer(givenAnswer) {
     console.log(this.userAnswer);
     console.log(this.questionInfo.answer);
@@ -31,7 +29,7 @@ export class AnswerComponent implements OnInit {
       console.log("You blew it!!")
     }
 
-    this.getDataFromService();
+    this.newQuestion.emit(true);
 
     this.userAnswer = '';
 

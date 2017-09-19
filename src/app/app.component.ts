@@ -12,9 +12,9 @@ export class AppComponent implements OnInit {
 
   questionInfo;
 
-  totalScore: number = 0;
+  //totalScore: number = 0;
 
-  userAnswer;
+  //userAnswer;
 
   constructor(private jeopardyService : JeopardyService){}
 
