@@ -2,14 +2,12 @@
 
 
 
-<div style="text-align:center">
+<div id="header" style="text-align:center">
   <h1>
     Welcome to {{title}}!
   </h1>
   <h3>Your curent score:  </h3> {{answerAttributes?.totalScore}}
 </div>
-<br>
-<hr>
 <br>
 
 <div id="questionBox" style="text-align:center">
@@ -19,7 +17,5 @@
   <h3>Question:</h3>
   <p>{{questionInfo?.question}}</p>
 </div>
-<br>
-<hr>
 <br>
 <app-answer #answerAttributes (newQuestion)="getDataFromService()" [questionInfo]="questionInfo"></app-answer>
